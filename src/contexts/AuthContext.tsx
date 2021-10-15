@@ -60,10 +60,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
       });
 
       setUser(response.data.user);
-      api.defaults.headers["Authorization"] = `Bearer ${response.data.token}`;
+      api.defaults.headers["Authorization"] = `Bearer ${response.data.access_token}`;
 
       localStorage.setItem("@KIT:user", JSON.stringify(response.data.user));
-      localStorage.setItem("@KIT:token", response.data.token);
+      localStorage.setItem("@KIT:token", response.data.access_token);
     } catch {
       ErrorToast("Credenciais incorretas!")
     }

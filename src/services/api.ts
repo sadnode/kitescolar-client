@@ -12,7 +12,6 @@ api.interceptors.response.use(response => {
 }, (error: AxiosError) => {
   if(error.response?.status === 401) {
     if(error.response?.data.message === "Invalid token!") {
-      console.log('expirou')
       window.location.reload();
     }
   }
